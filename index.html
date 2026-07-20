@@ -69,12 +69,20 @@
 
   <!-- NAV -->
   <nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:20px clamp(20px,4vw,48px);background:rgba(242,206,157,0.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(36,31,26,0.1);">
-    <a href="#topo" class="serif nav-title" style="flex:1;font-size: 16px; letter-spacing: 0.1em; line-height: 1.2;white-space:nowrap;transition:transform 0.15s ease;" style-active="transform:scale(0.94);">pernambuco artesão - jornadas critaivas</a>
+    <a href="#topo" class="serif nav-title" style="flex:1;font-size: 16px; letter-spacing: 0.1em; line-height: 1.2;white-space:nowrap;transition:transform 0.15s ease;" style-active="transform:scale(0.94);">pernambuco artesão - jornadas criativas</a>
     <div class="nav-links" style="flex:1;display:flex;justify-content:space-between;gap:16px;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;">
+      <div style="position:relative;" data-produtos-menu-wrap="true" onMouseEnter="{{ openProdutosMenu }}" onMouseLeave="{{ closeProdutosMenu }}">
+        <a href="#produtos" style="opacity:0.75;text-decoration:{{ navProdutos }};text-underline-offset:4px;transition:transform 0.15s ease,opacity 0.15s ease;" style-hover="opacity:1;" style-active="transform:scale(0.9);opacity:0.6;">Produtos</a>
+        <div style="position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;min-width:180px;z-index:60;display:{{ produtosMenuDisplay }};">
+          <div style="background:#f2ce9d;border:1px solid rgba(63,76,118,0.25);border-radius:8px;padding:10px 0;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(63,76,118,0.18);">
+            <a href="#produtos" onClick="{{ closeProdutosMenu }}" style="padding:8px 18px;opacity:0.8;white-space:nowrap;text-transform:none;letter-spacing:0.02em;font-size:13px;cursor:pointer;" style-hover="opacity:1;background:rgba(63,76,118,0.08);">Coletivo</a>
+            <a href="./Catalogos.dc.html" onClick="{{ closeProdutosMenu }}" style="padding:8px 18px;opacity:0.8;white-space:nowrap;text-transform:none;letter-spacing:0.02em;font-size:13px;cursor:pointer;" style-hover="opacity:1;background:rgba(63,76,118,0.08);">Catálogos</a>
+          </div>
+        </div>
+      </div>
       <a href="#processo" style="opacity:0.75;text-decoration:{{ navProcesso }};text-underline-offset:4px;transition:transform 0.15s ease,opacity 0.15s ease;" style-hover="opacity:1;" style-active="transform:scale(0.9);opacity:0.6;">Processo</a>
-      <a href="#produtos" style="opacity:0.75;text-decoration:{{ navProdutos }};text-underline-offset:4px;transition:transform 0.15s ease,opacity 0.15s ease;" style-hover="opacity:1;" style-active="transform:scale(0.9);opacity:0.6;">Produtos</a>
-      <div style="position:relative;" data-sobre-menu-wrap="true">
-        <a href="#sobre" onClick="{{ toggleSobreMenu }}" style="opacity:0.75;text-decoration:{{ navSobre }};text-underline-offset:4px;transition:transform 0.15s ease,opacity 0.15s ease;" style-hover="opacity:1;" style-active="transform:scale(0.9);opacity:0.6;">Sobre</a>
+      <div style="position:relative;" data-sobre-menu-wrap="true" onMouseEnter="{{ openSobreMenu }}" onMouseLeave="{{ closeSobreMenu }}">
+        <a href="#sobre" style="opacity:0.75;text-decoration:{{ navSobre }};text-underline-offset:4px;transition:transform 0.15s ease,opacity 0.15s ease;" style-hover="opacity:1;" style-active="transform:scale(0.9);opacity:0.6;">Sobre</a>
         <div style="position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;min-width:180px;z-index:60;display:{{ sobreMenuDisplay }};">
           <div style="background:#f2ce9d;border:1px solid rgba(63,76,118,0.25);border-radius:8px;padding:10px 0;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(63,76,118,0.18);">
             <a href="#facilitadora" onClick="{{ closeSobreMenu }}" style="padding:8px 18px;opacity:0.8;white-space:nowrap;text-transform:none;letter-spacing:0.02em;font-size:13px;cursor:pointer;" style-hover="opacity:1;background:rgba(63,76,118,0.08);">A facilitadora</a>
@@ -91,7 +99,7 @@
 
   <!-- PROCESSO -->
   <section id="topo" class="snap-section" style="position:relative;padding:100px clamp(20px,4vw,48px) 0;height:clamp(900px,100vh,1000px);display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;overflow:hidden;">
-    <h1 class="serif hero-title" style="font-size: 45px; line-height: 0.98; margin: 0 0 4px; white-space: nowrap">artesãos da mata sul</h1><p class="hero-desc" style="max-width: 720px; font-size: 14px; line-height: 1.6; opacity: 0.75; margin: 4px 0 0">Dois meses de mentoria, pesquisa e desenvolvimento de coleção com dezoito artesãos da Mata Sul de Pernambuco. Toque em um card para ver o trabalho, o catálogo e o contato de cada um.</p><div style="max-width:1400px;margin:0 auto;">
+    <h1 class="serif hero-title" style="font-size: 45px; line-height: 0.98; margin: 0 0 4px; white-space: nowrap; color: #3F4C76">artesãos da mata sul</h1><p class="serif" style="font-size: 25px; margin: 0 0 4px; letter-spacing: 0.11em; color: #3F4C76">+ facilitação e mentoria de ana luiza nigri</p><p class="hero-desc" style="max-width: 720px; font-size: 14px; line-height: 1.6; opacity: 0.75; margin: 4px 0 0">Dois meses de mentoria, pesquisa e desenvolvimento de coleção com dezoito artesãos da Mata Sul de Pernambuco. Toque em um card para ver o trabalho, o catálogo e o contato de cada um.</p><div style="max-width:1400px;margin:0 auto;">
       
       
       
@@ -170,6 +178,7 @@
       <h2 class="serif" style="font-size:45px;line-height:0.98;margin:0 0 4px;">Produtos</h2>
       <p style="max-width:720px;font-size:14px;line-height:1.6;opacity:0.75;margin:4px 0 0;">As peças foram fotografadas pelos próprios artesãos em oficina. Cada participante desenvolveu seus produtos ao longo das Jornadas Criativas, em um processo de facilitação voltado ao fortalecimento da sua identidade criativa e à busca por novas soluções inovadoras - fortalecendo a identidade própria e compondo uma identidade para a região.</p>
     </div>
+    <div style="position:relative;max-height:{{ produtosMaxHeight }};overflow:hidden;transition:max-height 0.4s ease;">
     <div class="hide-desktop" style="width:100%;padding:0 clamp(12px,2vw,20px);display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start;align-content:start;box-sizing:border-box;">
       <div style="display:flex;flex-direction:column;gap:12px;align-items:stretch;">
         <sc-for list="{{ produtoItemsLeft }}" as="item" hint-placeholder-count="8">
@@ -221,11 +230,17 @@
         </div>
       </sc-for>
     </div>
+    <div style="position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to bottom,rgba(242,206,157,0),rgba(242,206,157,1));pointer-events:none;display:{{ produtosFadeDisplay }};"></div>
+    </div>
+    <div style="text-align:center;margin-top:20px;">
+      <button onClick="{{ toggleProdutos }}" style="background:none;border:1px solid rgba(63,76,118,0.4);border-radius:100px;padding:10px 28px;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#3f4c76;cursor:pointer;display:{{ produtosButtonDisplay }};">{{ produtosButtonLabel }}</button>
+    </div>
   </section><section id="processo" class="snap-section" style="border-top:1px solid rgba(63,76,118,0.25);padding:clamp(64px,8vw,120px) 0;background:#f2ce9d;color:#3f4c76;overflow:hidden;min-height:100vh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;">
     <div style="padding:0 clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-end;margin-bottom:24px;" data-reveal="true">
       <h2 class="serif" style="font-size:45px;line-height:0.98;margin:0 0 4px;">Processo</h2>
       <p style="max-width:720px;font-size:14px;line-height:1.6;opacity:0.75;margin:4px 0 0;">Entre conversas, experimentações e trocas, a faclitação convida cada artesão a mergulhar no próprio fazer. Um espaço para aprofundar repertórios, definir caminhos e desenvolver peças inovadoras que carreguem e propaguem a sua identidade criativa.</p>
     </div>
+    <div style="position:relative;max-height:{{ processoMaxHeight }};overflow:hidden;transition:max-height 0.4s ease;">
     <div class="hide-desktop" style="width:100%;padding:0 clamp(12px,2vw,20px);display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start;align-content:start;box-sizing:border-box;">
       <div style="display:flex;flex-direction:column;gap:12px;align-items:stretch;">
         <sc-for list="{{ processoItemsLeft }}" as="item" hint-placeholder-count="8">
@@ -268,6 +283,11 @@
         </div>
       </sc-for>
     </div>
+    <div style="position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to bottom,rgba(242,206,157,0),rgba(242,206,157,1));pointer-events:none;display:{{ processoFadeDisplay }};"></div>
+    </div>
+    <div style="text-align:center;margin-top:20px;">
+      <button onClick="{{ toggleProcesso }}" style="background:none;border:1px solid rgba(63,76,118,0.4);border-radius:100px;padding:10px 28px;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#3f4c76;cursor:pointer;display:{{ processoButtonDisplay }};">{{ processoButtonLabel }}</button>
+    </div>
   </section>
 
   <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;background:rgba(63,76,118,0.96);z-index:300;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;display:{{ lightboxDisplay }};pointer-events:{{ lightboxPointerEvents }};">
@@ -299,14 +319,25 @@
       <div id="programa" class="sobre-block" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;scroll-margin-top:90px;">
         <div class="sobre-text" data-reveal="true" style="order:1;">
           <h3 class="serif" style="font-size:22px;margin:0 0 12px;color:#c2582f;">O programa</h3>
-          <p style="font-size:16px;line-height:1.75;opacity:0.85;margin:0 0 16px;">O Pernambuco Artesão foi um programa produzido e gerenciado pela ABP Moda, em parceria com o Sebrae PE e a ADEPE, voltado ao fortalecimento da cadeia produtiva do artesanato pernambucano. O programa aconteceu em diversas regiões do estado, reunindo artesãos formalizados em SICAB ou CNPJ.</p>
-          <p style="font-size:16px;line-height:1.75;opacity:0.85;margin:0 0 16px;">Este projeto apresenta a Jornada Criativa desenvolvida por Ana Luiza Nigri com os artesãos da Mata Sul, em Sirinhaém: dois meses de desenvolvimento conjunto, mergulhando em suas trajetórias, referências culturais e processos criativos.</p>
-          <p style="font-size:16px;line-height:1.75;opacity:0.85;margin:0;">Ao final da Jornada Criativa, cada artesão desenvolveu uma coleção com diversas obras e criou um catálogo. Muitos reforçaram, aprimoraram ou criaram sua marca do zero. O resultado está apresentado aqui.</p>
-        </div>
+          <p style="font-size:16px;line-height:1.75;opacity:0.85;margin:0 0 16px;">O Pernambuco Artesão foi um programa realizado pela ADEPE em parceria com o Sebrae PE, com apoio e gestão da ABP Moda, voltado ao fortalecimento da cadeia produtiva do artesanato pernambucano. O programa aconteceu em diversas regiões do estado, reunindo artesãos formalizados em SICAB ou CNPJ.</p>
+          <p style="font-size:16px;line-height:1.75;opacity:0.85;margin:0 0 16px;">Este site é uma vitrine do trabalho realizado por Ana Luiza Nigri como facilitadora da Jornada Criativa com os artesãos da Mata Sul, em Sirinhaém: dois meses de mentoria conjunta, mergulhando em trajetórias, referências culturais e processos criativos.</p>
+          <p style="font-size:16px;line-height:1.75;opacity:0.85;margin:0;">Todas as coleções, catálogos e identidades visuais aqui apresentados foram desenvolvidos por Ana Luiza Nigri junto aos artesãos ao longo da mentoria. Ao final da Jornada Criativa, cada um desenvolveu uma coleção com diversas obras e criou um catálogo — muitos reforçaram, aprimoraram ou criaram sua marca do zero.
+        </p></div>
         <div class="sobre-photo" data-reveal="true" style="order:2;width:100%;aspect-ratio:3/4;overflow:hidden;">
           <image-slot id="programa-photo" shape="rect" placeholder="Foto do programa" src="./media/programa-photo.jpg"></image-slot>
         </div>
       </div>
+    </div>
+  </section><section id="trabalhe" class="snap-section" style="border-top:1px solid rgba(242,206,157,0.25);padding:clamp(40px,6vw,90px) clamp(20px,4vw,48px) 90px;background:#3f4c76;color:#f2ce9d;text-align:center;min-height:100vh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;">
+    <div data-reveal="true" style="max-width:760px;margin:0 auto;">
+      
+      <h2 class="serif" style="font-size: 36px; line-height: 1.1; margin: 0 0 24px" id="footerHeadline">Projetos que unem identidade, desenvolvimento de produto e artesanato a partir do diálogo com artesãos, territórios e modos de fazer.</h2>
+      <p style="font-size:16px;line-height:1.7;opacity:0.75;margin:0 0 36px;">Se você representa um programa, marca, instituição ou comunidade e acredita nesse caminho, vamos conversar.</p>
+      <p style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.6;margin:0 0 20px;">Ana Luiza Nigri</p><div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="mailto:lulucanigri@gmail.com" style="padding:14px 28px;background:#f2ce9d;color:#3f4c76;border-radius:100px;font-size:14px;letter-spacing:0.04em;">E-mail</a>
+        <a href="https://instagram.com/lulucalu" target="_blank" rel="noopener" style="padding:14px 28px;border:1px solid rgba(243,237,228,0.4);border-radius:100px;font-size:14px;letter-spacing:0.04em;">Instagram</a>
+      </div>
+      <p style="font-size:11px;letter-spacing:0.08em;opacity:0.5;margin:32px 0 0;">Plataforma virtual desenvolvida por Ana Luiza Nigri</p>
     </div>
   </section>
 
@@ -314,31 +345,29 @@
   
 
   <!-- FOOTER -->
-  <section id="trabalhe" class="snap-section" style="border-top:1px solid rgba(242,206,157,0.25);padding:clamp(40px,6vw,90px) clamp(20px,4vw,48px) 90px;background:#3f4c76;color:#f2ce9d;text-align:center;min-height:100vh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;">
-    <div data-reveal="true" style="max-width:760px;margin:0 auto;">
-      
-      <h2 class="serif" style="font-size: 36px; line-height: 1.1; margin: 0 0 24px" id="footerHeadline">Projetos que unem identidade, desenvolvimento de produto e artesanato a partir do diálogo com artesãos, territórios e modos de fazer.</h2>
-      <p style="font-size:16px;line-height:1.7;opacity:0.75;margin:0 0 36px;">Se você representa um programa, marca, instituição ou comunidade e acredita nesse caminho, vamos conversar.</p>
-      <p style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.6;margin:0 0 20px;">Ana Luiza Nigri</p><div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <a href="/cdn-cgi/l/email-protection#e78b928b928486898e80958ea7808a868e8bc984888a" style="padding:14px 28px;background:#f2ce9d;color:#3f4c76;border-radius:100px;font-size:14px;letter-spacing:0.04em;">E-mail</a>
-        <a href="https://instagram.com/lulucalu" target="_blank" rel="noopener" style="padding:14px 28px;border:1px solid rgba(243,237,228,0.4);border-radius:100px;font-size:14px;letter-spacing:0.04em;">Instagram</a>
-      </div>
-    </div>
-  </section><footer style="position:fixed;bottom:0;left:0;right:0;z-index:40;padding: 14px clamp(20px,4vw,48px); text-align: center; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85;background:rgba(242,206,157,0.95);backdrop-filter:blur(6px);border-top:1px solid rgba(63,76,118,0.2);">
-    Pernambuco Artesão 2026 · Sirinhaém · Produção e gestão ABP Moda · Realização Sebrae PE · ADEPE&nbsp;<span style="color: rgb(63, 76, 118); letter-spacing: 0.96px;">&nbsp;·&nbsp;facilitação ana luiza nigri</span>&nbsp;</footer>
+  <footer style="position:fixed;bottom:0;left:0;right:0;z-index:40;padding: 14px clamp(20px,4vw,48px); text-align: center; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85;background:rgba(242,206,157,0.95);backdrop-filter:blur(6px);border-top:1px solid rgba(63,76,118,0.2);"><span style="color: rgb(63, 76, 118); letter-spacing: 0.96px;">RESULTADOS E PROCESSOS DA FACILITAÇÃO DE ANA LUIZA NIGRI NO PERNAMBUCO ARTESÃO 2026 • SIRINHAEM</span><span style="color: rgb(63, 76, 118); letter-spacing: 0.88px;"><br>Realização ADEPE e Sebrae PE · Apoio e gestão ABP Moda&nbsp;</span><span style="color: rgb(63, 76, 118); letter-spacing: 0.96px;">&nbsp;·&nbsp;</span></footer>
 
 </div>
 </x-dc>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/x-dc" data-dc-script>
+<script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { hoverIndex: null, activeSection: null, lightboxSrc: null, sobreMenuOpen: false };
+  state = { hoverIndex: null, activeSection: null, lightboxSrc: null, sobreMenuOpen: false, produtosMenuOpen: false, produtosExpanded: false, processoExpanded: false };
 
   openSobreMenu = () => this.setState({ sobreMenuOpen: true });
   closeSobreMenu = () => this.setState({ sobreMenuOpen: false });
   toggleSobreMenu = () => this.setState((s) => ({ sobreMenuOpen: !s.sobreMenuOpen }));
+  openProdutosMenu = () => this.setState({ produtosMenuOpen: true });
+  closeProdutosMenu = () => this.setState({ produtosMenuOpen: false });
+  toggleProdutos = () => this.setState((s) => ({ produtosExpanded: !s.produtosExpanded }));
+  toggleProcesso = () => this.setState((s) => ({ processoExpanded: !s.processoExpanded }));
   handleDocClick = (e) => {
     if (this.state.sobreMenuOpen && !e.target.closest('[data-sobre-menu-wrap]')) this.setState({ sobreMenuOpen: false });
+    if (this.state.produtosMenuOpen && !e.target.closest('[data-produtos-menu-wrap]')) this.setState({ produtosMenuOpen: false });
   };
+
+  componentDidUpdate() {
+    if (this._heroImgEl && this._pendingHoverCover) this._heroImgEl.src = this._pendingHoverCover;
+  }
 
   componentDidMount() {
     this.forcePlayVideos();
@@ -398,18 +427,18 @@ class Component extends DCLogic {
 
   artisans = [
     { name: 'Jorgeogue', cover: './catalogos/jorgeogue.jpg', photo: './catalogos/jorgeogue_photo.jpg', card: './catalogos/jorgeogue.html', desc: 'O Nascimento das Tartarugas — esculturas em durepox que exploram imaginário, sonhos e arqueologia.' },
-    { name: 'lia paula', cover: './catalogos/liapaula.jpg', photo: './catalogos/liapaula_photo.jpg', card: './catalogos/liapaula.html', desc: 'Fruto do Mangue — mesa posta em crochê de palha de bananeira que veste a comida regional do restaurante.' },
-    { name: 'marcos lima', cover: './catalogos/marcos.jpg', photo: './catalogos/marcos_photo.jpg', card: './catalogos/marcos.html', desc: 'Casa Mangue — móveis e objetos em madeira onde o emaranhado dos galhos do mangue atravessa a estrutura.' },
+    { name: 'Lia Paula', brand: 'Fruto do Mangue', cover: './catalogos/liapaula.jpg', photo: './catalogos/liapaula_photo.jpg', card: './catalogos/liapaula.html', desc: 'Fruto do Mangue — mesa posta em crochê de palha de bananeira que veste a comida regional do restaurante.' },
+    { name: 'Marcos Rogério', brand: 'Madeiarte', cover: './catalogos/marcos.jpg', photo: './catalogos/marcos_photo.jpg', card: './catalogos/marcos.html', desc: 'Casa Mangue — móveis e objetos em madeira onde o emaranhado dos galhos do mangue atravessa a estrutura.' },
     { name: 'Carol Wanderley', cover: './catalogos/carol.jpg', photo: './catalogos/carol_photo.jpg', card: './catalogos/carol_fullbleed.html', desc: 'Quadradinho da Vovó — crochê que leva o ponto da avó para bolsas, jogos e quadros de parede.' },
     { name: 'Mestre Sandro', cover: './catalogos/sandro.jpg', photo: './catalogos/sandro_photo.jpg', card: './catalogos/sandro.html', desc: 'A Feira — esculturas em madeira que homenageiam as frutas e memórias da feira de Tamandaré.' },
     { name: 'Karlise custódio', cover: './catalogos/karlise.jpg', photo: './catalogos/karlise_photo.jpg', card: './catalogos/karlise.html', desc: 'Xiquitita — bolsas e acessórios em xita e palha que celebram as festas populares de Pernambuco.' },
-    { name: 'ivonete da silva', cover: './catalogos/ivonete.jpg', photo: './catalogos/ivonete_photo.jpg', card: './catalogos/ivonete.html', desc: 'O Coqueiro Que Me Refresca — bolsas para o dia a dia, praia e passeio, feitas para durar.' },
-    { name: "claudia de souza", cover: './catalogos/claudia.jpg', photo: './catalogos/claudia_photo.jpg', card: './catalogos/claudia_fullbleed.html', desc: 'Nas Areias de Porto — joias com escama de peixe que unem mar e brilho há 20 anos.' },
-    { name: 'edson junior', cover: './catalogos/edson.jpg', photo: './catalogos/edson_photo.jpg', card: './catalogos/edson_fullbleed.html', desc: 'Estudo da Forma — esculturas em xiloteca de madeiras brasileiras que reinterpretam os folguedos pernambucanos.' },
-    { name: 'lilly guignoni', cover: './catalogos/lilly.jpg', video: './catalogos/lilly_photo.mp4', card: './catalogos/lilly_fullbleed.html', desc: 'Meu Lugar no Mundo — macramé com miçangas que carrega a ancestralidade pelos territórios que atravessa.' },
-    { name: 'antonio jandeir', cover: './catalogos/tony.jpg', photo: './catalogos/tony_photo.jpg', card: './catalogos/tony.html', desc: 'Da Madeira ao Mundo — carros de brinquedo em madeira reaproveitada que atravessam as estradas do Brasil.' },
-    { name: 'cássia santana', cover: './catalogos/cassia.jpg', photo: './catalogos/cassia_photo.jpg', card: './catalogos/cassia.html', desc: 'Raízes do Litoral — moda praia inspirada no mangue e na força das mulheres pescadoras de Sirinhaém.' },
-    { name: 'C. Neves', cover: './catalogos/charlie.jpg', photo: './catalogos/charlie_photo.jpg', card: './catalogos/charlie.html', desc: 'Devaneio Oceânico — esculturas em madeira com ilusões de ótica e cores neon, inspiradas num oceano imaginário.' },
+    { name: 'Ivonete da Silva', brand: 'Verete', cover: './catalogos/ivonete.jpg', photo: './catalogos/ivonete_photo.jpg', card: './catalogos/ivonete.html', desc: 'O Coqueiro Que Me Refresca — bolsas para o dia a dia, praia e passeio, feitas para durar.' },
+    { name: 'Claudia de Souza', brand: 'Scamarts', cover: './catalogos/claudia.jpg', photo: './catalogos/claudia_photo.jpg', card: './catalogos/claudia_fullbleed.html', desc: 'Nas Areias de Porto — joias com escama de peixe que unem mar e brilho há 20 anos.' },
+    { name: 'Edson Júnior', brand: 'Edson Marchetaria', cover: './catalogos/edson.jpg', photo: './catalogos/edson_photo.jpg', card: './catalogos/edson_fullbleed.html', desc: 'Estudo da Forma — esculturas em xiloteca de madeiras brasileiras que reinterpretam os folguedos pernambucanos.' },
+    { name: 'Lilly Guignoni', brand: 'Facheiro', cover: './catalogos/lilly.jpg', video: './catalogos/lilly_photo.mp4', card: './catalogos/lilly_fullbleed.html', desc: 'Meu Lugar no Mundo — macramé com miçangas que carrega a ancestralidade pelos territórios que atravessa.' },
+    { name: 'Antonio Jandeir', brand: 'Tony Artesão', cover: './catalogos/tony.jpg', photo: './catalogos/tony_photo.jpg', card: './catalogos/tony.html', desc: 'Da Madeira ao Mundo — carros de brinquedo em madeira reaproveitada que atravessam as estradas do Brasil.' },
+    { name: 'Cássia Santana', brand: 'Aver O Mar', cover: './catalogos/cassia.jpg', photo: './catalogos/cassia_photo.jpg', card: './catalogos/cassia.html', desc: 'Raízes do Litoral — moda praia inspirada no mangue e na força das mulheres pescadoras de Sirinhaém.' },
+    { name: 'Charlie Neves', brand: 'Charlie Neves', cover: './catalogos/charlie.jpg', photo: './catalogos/charlie_photo.jpg', card: './catalogos/charlie.html', desc: 'Devaneio Oceânico — esculturas em madeira com ilusões de ótica e cores neon, inspiradas num oceano imaginário.' },
     { name: 'Cícero Francisco', cover: './catalogos/cicero.jpg', photo: './catalogos/cicero_photo.jpg', card: './catalogos/cicero_fullbleed.html', desc: 'Mangue Vivo — utensílios e utilitários decorativos de coco e madeira que celebram a fauna do mangue.' },
     { name: 'Maré de Sena', cover: './catalogos/anasena.jpg', photo: './catalogos/anasena_photo.jpg', card: './catalogos/anasena_fullbleed.html', desc: 'O Mar em Mim — acessórios em macramé e palha inspirados nas paisagens de Guadalupe.' },
     { name: 'Rosângela Maria', cover: './catalogos/rosangela.jpg', photo: './catalogos/rosangela_photo.jpg', card: './catalogos/rosangela_fullbleed.html', desc: 'Nayara: A Boneca de Tamandaré — a boneca indígena que guarda a memória do povo caeté e protege o mangue.' },
@@ -426,15 +455,12 @@ class Component extends DCLogic {
     this.setState({ hoverIndex: null });
   };
 
-  heroImgRef = (el) => {
-    this._heroImgEl = el;
-    if (el && this._pendingHoverCover) el.src = this._pendingHoverCover;
-  };
+  heroImgRef = (el) => { this._heroImgEl = el; if (el && this._pendingHoverCover) el.src = this._pendingHoverCover; };
 
   setHover = (index) => {
     if (this._hoverTimer) clearTimeout(this._hoverTimer);
     this.setState({ hoverIndex: index });
-    this._hoverTimer = setTimeout(() => { this.setState({ hoverIndex: null }); this._hoverTimer = null; }, 4000);
+    this._hoverTimer = setTimeout(() => { this.setState({ hoverIndex: null }); this._hoverTimer = null; }, 5000);
   };
 
   cardTap = (i) => (e) => {
@@ -502,7 +528,7 @@ class Component extends DCLogic {
     const hasHover = hoverIndex !== null && hoverIndex !== undefined;
     const noHover = !hasHover;
     const hoverArtisan = hasHover ? artisans[hoverIndex] : null;
-    const hoverName = hoverArtisan ? hoverArtisan.name : '';
+    const hoverName = hoverArtisan ? (hoverArtisan.brand || hoverArtisan.name) : '';
     const hoverDesc = hoverArtisan ? (hoverArtisan.desc || 'Artesão da Mata Sul de Pernambuco, participante das Jornadas Criativas 2026.') : '';
     const hoverDescDashIdx = hoverDesc.indexOf(' — ');
     const hoverDescTitle = hoverDescDashIdx !== -1 ? hoverDesc.slice(0, hoverDescDashIdx) : '';
@@ -512,7 +538,7 @@ class Component extends DCLogic {
     const hoverIsVideo = !!hoverVideo;
     const hoverShowImg = !hoverIsVideo && !!hoverCover;
     this._pendingHoverCover = hoverCover;
-    if (this._heroImgEl && hoverCover) this._heroImgEl.src = hoverCover;
+    if (this._heroImgEl) this._heroImgEl.src = hoverCover || '';
     const hoverPhotoSlot = hasHover ? 'preview-photo-' + hoverIndex : 'preview-photo-none';
     const hoverCard = hoverArtisan ? hoverArtisan.card : '';
 
@@ -597,6 +623,16 @@ class Component extends DCLogic {
       navProcesso, navProdutos, navSobre, navContato,
       sobreMenuDisplay: this.state.sobreMenuOpen ? 'flex' : 'none',
       openSobreMenu: this.openSobreMenu, closeSobreMenu: this.closeSobreMenu, toggleSobreMenu: this.toggleSobreMenu,
+      produtosMenuDisplay: this.state.produtosMenuOpen ? 'flex' : 'none',
+      openProdutosMenu: this.openProdutosMenu, closeProdutosMenu: this.closeProdutosMenu,
+      produtosMaxHeight: this.state.produtosExpanded ? 'none' : '900px',
+      produtosFadeDisplay: this.state.produtosExpanded ? 'none' : 'block',
+      produtosButtonDisplay: this.state.produtosExpanded ? 'none' : 'inline-block',
+      produtosButtonLabel: 'Ver mais', toggleProdutos: this.toggleProdutos,
+      processoMaxHeight: this.state.processoExpanded ? 'none' : '900px',
+      processoFadeDisplay: this.state.processoExpanded ? 'none' : 'block',
+      processoButtonDisplay: this.state.processoExpanded ? 'none' : 'inline-block',
+      processoButtonLabel: 'Ver mais', toggleProcesso: this.toggleProcesso,
       colA, colB, allArtisansMobile, allArtisansMobileLoop, hasHover, noHover, hoverName, hoverDesc, hoverDescTitle, hoverDescRest, hoverCover, hoverVideo, hoverIsVideo, hoverShowImg, hoverPhotoSlot, hoverCard, heroImgRef: this.heroImgRef,
       clearHover: this.clearHover,
       processoImages, produtoImages,
