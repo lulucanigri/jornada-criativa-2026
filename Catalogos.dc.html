@@ -31,7 +31,7 @@
 <div class="sans" style="width:100%;overflow-x:hidden;min-height:100vh;box-sizing:border-box;">
 
   <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:20px clamp(20px,4vw,48px);background:rgba(242,206,157,0.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(36,31,26,0.1);">
-    <a href="./Artesaos da Mata Sul.dc.html" class="serif" style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;opacity:0.75;transition:opacity 0.15s ease;" style-hover="opacity:1;">← Voltar ao site</a>
+    <a href="./Artesaos%20da%20Mata%20Sul.dc.html" class="serif" style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;opacity:0.75;transition:opacity 0.15s ease;" style-hover="opacity:1;">← Voltar ao site</a>
     <span class="serif" style="font-size:16px;letter-spacing:0.1em;">catálogos</span>
   </nav>
 
@@ -45,7 +45,7 @@
               <img ref="{{ a.photoRef }}" alt="{{ a.brandOrName }}" class="cat-hover-photo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:{{ a.previewOpacity }};transition:opacity 0.3s ease;">
             </sc-if>
             <sc-if value="{{ a.hasVideo }}" hint-placeholder-val="{{ false }}">
-              <video src="{{ a.video }}" muted="" loop="" playsinline="" preload="none" class="cat-hover-photo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:{{ a.previewOpacity }};transition:opacity 0.3s ease;"></video>
+              <video ref="{{ a.videoRef }}" muted="" loop="" playsinline="" preload="none" class="cat-hover-photo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:{{ a.previewOpacity }};transition:opacity 0.3s ease;"></video>
             </sc-if>
           </div>
           <span class="serif" style="font-size:16px;line-height:1.15;font-weight:600;">{{ a.name }}</span>
@@ -65,6 +65,15 @@ class Component extends DCLogic {
     if (el && this.artisansData[i] && el.src !== new URL(this.artisansData[i].photo, window.location.href).href) {
       el.src = this.artisansData[i].photo;
     }
+  };
+  videoRef = (i) => (el) => {
+    if (!el || el._bound) return;
+    el._bound = true;
+    el.muted = true;
+    el.src = this.artisansData[i].video;
+    el.loop = true;
+    const p = el.play();
+    if (p && p.catch) p.catch(() => {});
   };
 
   tapCard = (i) => (e) => {
@@ -109,7 +118,7 @@ class Component extends DCLogic {
       ...a, $index: i, card: this.resolveCardUrl(a.card), brandOrName: a.brand || a.name,
       hasPhoto: !!a.photo, hasVideo: !!a.video,
       previewOpacity: tappedIndex === i ? 1 : 0,
-      tapHref: this.resolveCardUrl(a.card), onTap: this.tapCard(i), photoRef: this.photoRef(i),
+      tapHref: this.resolveCardUrl(a.card), onTap: this.tapCard(i), photoRef: this.photoRef(i), videoRef: this.videoRef(i),
     }));
     return { artisans };
   }
