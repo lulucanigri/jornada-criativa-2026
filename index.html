@@ -62,7 +62,6 @@
     #mobileScrollTrack::-webkit-scrollbar { display: none; }
     #mobileScrollTrack { scrollbar-width: none; }
   </style>
-  <script src="./image-slot.js"></script>
 </helmet>
 
 <div class="sans" style="width:100%;overflow-x:hidden;">
@@ -303,14 +302,14 @@
 
       <div id="facilitadora" class="sobre-block" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;scroll-margin-top:90px;">
         <div class="sobre-photo hide-mobile" data-reveal="true" style="width:100%;aspect-ratio:3/4;overflow:hidden;">
-          <image-slot id="facilitadora-photo-v2" shape="rect" placeholder="Foto ou GIF da facilitadora" src="./media/facilitadora-photo.jpg"></image-slot>
+          <img src="./media/facilitadora-photo.jpg" alt="A facilitadora" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <div class="sobre-photo hide-desktop" data-reveal="true" style="width:100%;aspect-ratio:3/4;overflow:hidden;">
-          <image-slot id="facilitadora-photo-mobile" shape="rect" placeholder="Foto da facilitadora (mobile)" src="./media/facilitadora-photo-mobile.jpg"></image-slot>
+          <img src="./media/facilitadora-photo-mobile.jpg" alt="A facilitadora" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <div class="sobre-text" data-reveal="true">
           <h3 class="serif" style="font-size:22px;margin:0 0 12px;color:#c2582f;">A facilitadora</h3>
-          <p style="font-size:16px;line-height:1.75;opacity:0.85;margin:0 0 16px;">A jornada foi facilitada por Ana Luiza Nigri, designer de produto e pesquisadora que atua na interseção entre design, cultura e artesanato brasileiro. Seu trabalho consiste em reconhecer, aprofundar e comunicar, junto aos artesãos, a identidade que já existe em seu fazer, através de escuta, pesquisa de repertório, organização de narrativas e acompanhamento do desenvolvimento das coleções.</p>
+          <p style="font-size:16px;line-height:1.75;opacity:0.85;margin:0 0 16px;">A jornada foi facilitada por Ana Luiza Nigri, diretora criativa, designer de produto e pesquisadora que atua na interseção entre design, cultura e artesanato brasileiro. Seu trabalho consiste em reconhecer, aprofundar e comunicar, junto aos artesãos, a identidade que já existe em seu fazer, através de escuta, pesquisa de repertório, organização de narrativas e acompanhamento do desenvolvimento das coleções.</p>
           <p style="font-size:16px;line-height:1.75;opacity:0.85;margin:0 0 16px;">A facilitação também passa pelo aprimoramento de produto e acabamento, como uma lente colocada sobre a joia que já existe na obra de cada artesão. A proposta é apontar novos caminhos e promover inovação com profundidade, explorando a identidade criativa e a história de cada um.</p>
           <p style="font-size:16px;line-height:1.75;opacity:0.85;margin:0;">A facilitação integra o programa Pernambuco Artesão, dentro das Jornadas Criativas.</p>
         </div>
@@ -324,7 +323,7 @@
           <p style="font-size:16px;line-height:1.75;opacity:0.85;margin:0;">Todas as coleções, catálogos e identidades visuais aqui apresentados foram desenvolvidos por Ana Luiza Nigri junto aos artesãos ao longo da mentoria. Ao final da Jornada Criativa, cada um desenvolveu uma coleção com diversas obras e criou um catálogo — muitos reforçaram, aprimoraram ou criaram sua marca do zero.
         </p></div>
         <div class="sobre-photo" data-reveal="true" style="order:2;width:100%;aspect-ratio:3/4;overflow:hidden;">
-          <image-slot id="programa-photo" shape="rect" placeholder="Foto do programa" src="./media/programa-photo.jpg"></image-slot>
+          <img src="./media/programa-photo.jpg" alt="O programa" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
       </div>
     </div>
@@ -345,7 +344,7 @@
   
 
   <!-- FOOTER -->
-  <footer style="position:fixed;bottom:0;left:0;right:0;z-index:40;padding: 14px clamp(20px,4vw,48px); text-align: center; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85;background:rgba(242,206,157,0.95);backdrop-filter:blur(6px);border-top:1px solid rgba(63,76,118,0.2);"><span style="color: rgb(63, 76, 118); letter-spacing: 0.96px;">RESULTADOS E PROCESSOS DA FACILITAÇÃO DE ANA LUIZA NIGRI NO PERNAMBUCO ARTESÃO 2026 • SIRINHAEM</span><span style="color: rgb(63, 76, 118); letter-spacing: 0.88px;"><br>Realização ADEPE e Sebrae PE · Apoio e gestão ABP Moda&nbsp;</span><span style="color: rgb(63, 76, 118); letter-spacing: 0.96px;">&nbsp;·&nbsp;</span></footer>
+  <footer style="position:fixed;bottom:0;left:0;right:0;z-index:40;padding: 14px clamp(20px,4vw,48px); text-align: center; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85;background:rgba(242,206,157,0.95);backdrop-filter:blur(6px);border-top:1px solid rgba(63,76,118,0.2);"><span style="color: rgb(63, 76, 118); letter-spacing: 0.96px;">RESULTADOS E PROCESSOS DA FACILITAÇÃO DE ANA LUIZA NIGRI NO PERNAMBUCO ARTESÃO 2026 • SIRINHAEM</span><span style="color: rgb(63, 76, 118); letter-spacing: 0.88px;"><br>Realização Sebrae PE e ADEPE · Curadoria ABP Moda&nbsp;</span><span style="color: rgb(63, 76, 118); letter-spacing: 0.96px;">&nbsp;·&nbsp;</span></footer>
 
 </div>
 </x-dc>
@@ -590,7 +589,7 @@ class Component extends DCLogic {
     }));
 
     const produtoVideoAfterIndex = 15;
-    const produtoItems = [];
+    const produtoItems = [{ isVideo: true, src: './produtos/produto-video-02.mp4' }];
     produtoImages.forEach((img, i) => {
       produtoItems.push({ isPhoto: true, src: img.src });
       if (i === 3) {
