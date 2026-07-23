@@ -33,6 +33,8 @@
     @keyframes scrollLeftLoop { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     @media (max-width: 780px) {
       .hide-mobile { display: none !important; }
+      .footer-logos-row { padding-bottom: 14px !important; }
+      footer.site-footer { padding-top: 6px !important; padding-bottom: calc(2px + env(safe-area-inset-bottom)) !important; }
     }
     @media (min-width: 781px) {
       .hide-desktop { display: none !important; }
@@ -341,8 +343,8 @@
   </section>
 
   <!-- FOOTER -->
-  <footer style="position:fixed;bottom:0;left:0;right:0;z-index:40;padding: 10px clamp(20px,4vw,48px) 8px; text-align: center; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85;background:rgba(242,206,157,0.95);backdrop-filter:blur(6px);border-top:1px solid rgba(63,76,118,0.2);"><span style="color: rgb(63, 76, 118); letter-spacing: 0.96px;">RESULTADOS E PROCESSOS DA FACILITAÇÃO DE ANA LUIZA NIGRI NO PERNAMBUCO ARTESÃO 2026 • SIRINHAEM</span><span style="color: rgb(63, 76, 118); letter-spacing: 0.88px;"><br>Realização Sebrae PE e ADEPE · Curadoria ABP Moda&nbsp;</span><span style="color: rgb(63, 76, 118); letter-spacing: 0.96px;">&nbsp;·&nbsp;</span>
-    <div style="overflow:hidden;transition:max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;max-height:{{ footerLogosMaxHeight }};opacity:{{ footerLogosOpacity }};margin-top:{{ footerLogosMarginTop }};display:flex;align-items:center;justify-content:center;gap:clamp(20px,4vw,40px);flex-wrap:wrap;text-transform:none;letter-spacing:normal;padding-top:20px;border-top:1px solid rgba(63,76,118,0.25);">
+  <footer class="site-footer" style="position:fixed;bottom:0;left:0;right:0;z-index:40;padding: 10px clamp(20px,4vw,48px) calc(4px + env(safe-area-inset-bottom)); text-align: center; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85;background:rgba(242,206,157,0.98);backdrop-filter:blur(6px);border-top:1px solid rgba(63,76,118,0.2);"><span style="color: rgb(63, 76, 118); letter-spacing: 0.96px;">RESULTADOS E PROCESSOS DA FACILITAÇÃO DE ANA LUIZA NIGRI NO PERNAMBUCO ARTESÃO 2026 • SIRINHAEM •</span><span style="color: rgb(63, 76, 118); letter-spacing: 0.88px;"> Realização Sebrae PE e ADEPE · Curadoria ABP Moda</span>
+    <div style="overflow:hidden;transition:max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;max-height:{{ footerLogosMaxHeight }};opacity:{{ footerLogosOpacity }};margin-top:{{ footerLogosMarginTop }};display:flex;align-items:center;justify-content:center;gap:clamp(20px,4vw,40px);flex-wrap:wrap;text-transform:none;letter-spacing:normal;padding-top:20px;padding-bottom:14px;border-top:1px solid rgba(63,76,118,0.25);" class="footer-logos-row">
       <img src="./media/logo-adepe-alta.png" alt="ADEPE" style="height:44px;width:auto;object-fit:contain;" />
       <img src="./media/logo-sebrae-escura.png" alt="Sebrae PE" style="height:46px;width:auto;object-fit:contain;" />
       <img src="./media/logo-abpmoda-preta.png" alt="ABP Moda" style="height:46px;width:auto;object-fit:contain;" />
@@ -521,6 +523,8 @@ class Component extends DCLogic {
     const footerLogosMaxHeight = footerOpen ? '106px' : '0px';
     const footerLogosOpacity = footerOpen ? 1 : 0;
     const footerLogosMarginTop = footerOpen ? '18px' : '0px';
+    const footerLogosPaddingTop = footerOpen ? '20px' : '0px';
+    const footerLogosBorderTop = footerOpen ? '1px solid rgba(63,76,118,0.25)' : 'none';
     const artisans = this.artisans.map((a, i) => ({ ...a, $index: i, card: this.resolveCardUrl(a.card) }));
     const half = Math.ceil(artisans.length / 2);
     const withHover = (list) => list.map((a) => ({ ...a, onHover: () => this.setHover(a.$index), coverFit: a.wideLogo ? 'contain' : 'cover', coverPad: a.wideLogo ? '18%' : '0' }));
@@ -632,7 +636,7 @@ class Component extends DCLogic {
     const navContato = active === 'trabalhe' ? 'underline' : 'none';
 
     return {
-      footerLogosMaxHeight, footerLogosOpacity, footerLogosMarginTop,
+      footerLogosMaxHeight, footerLogosOpacity, footerLogosMarginTop, footerLogosPaddingTop, footerLogosBorderTop,
       navProcesso, navProdutos, navSobre, navContato,
       sobreMenuDisplay: this.state.sobreMenuOpen ? 'flex' : 'none',
       openSobreMenu: this.openSobreMenu, closeSobreMenu: this.closeSobreMenu, toggleSobreMenu: this.toggleSobreMenu,
